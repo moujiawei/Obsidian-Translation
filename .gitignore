@@ -1,0 +1,4 @@
+# 排除大文件
+server.exe
+dict_service/
+dict_service.zip
