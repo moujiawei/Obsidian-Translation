@@ -1,1052 +1,605 @@
-# 0目录
+# *==**建议用obsidian 打开README.md, 语法支持更好**==*
 
-- \[\[#1插件简介\]\]
-- \[\[#2功能特性(具体操作看 4如何使用该插件)\]\]
-- \[\[#3 准备工作（重中之重）\]\]
-- \[\[#4 如何使用该插件\]\]
-- \[\[#5 可能会有的问题及解决方案\]\]
-- \[\[#6 你可能感兴趣\]\]
-- \[\[#7 整体架构图\]\]
-- \[\[#8 历史版本\]\]
-- \[\[#9 联系方式\]\]
-- \[\[#10 赞助支持\]\]
-- \[\[#11 快速入门\]\]
-- \[\[#12 许可证信息\]\]
-- \[\[#13 致谢\]\]
+# 0目录
++ [[#1插件简介]]
++ [[#2功能特性(具体操作看 4如何使用该插件)]]
++ [[#3 准备工作（重中之重）]]
++ [[#4 如何使用该插件]]
++ [[#5 可能会有的问题及解决方案]]
++ [[#6 你可能感兴趣]]
++ [[#7 整体架构图]]
++ [[#8 历史版本]]
++ [[#9 联系方式]]
++ [[#10 赞助支持]]
++ [[#11 快速入门]]
++ [[#12 许可证信息]]
++ [[#13 致谢]]
 
 # 1插件简介
+Obsidian Translation 插件是一款集成有道文本翻译、有道图片翻译、复合文本翻译，复合图片翻译，词典查询，词汇本管理，批量表格翻译和表格基本操作的 Obsidian 插件，目前只对windows11做了测试
 
-Obsidian Translation
-插件是一款集成有道文本翻译、有道图片翻译、复合文本翻译，复合图片翻译，词典查询，词汇本管理，批量表格翻译和表格基本操作的
-Obsidian 插件，目前只对windows11做了测试
 
 # 2功能特性(具体操作看 4如何使用该插件)
++ 2.1支持有道文本机器翻译吗 ^2-1
++ 2.2支持有道文本词典释义^2-2
++ 2.3支持有道图片翻译 ^2-3
++ 2.4支持复合文本机器翻译 ^2-4
++ 2.5支持复合文本词典释义 ^2-5
++ 2.6支持复合图片翻译 ^2-6
++ 2.7支持显示框的二次翻译（在已经有的翻译结果显示框，能对显示框的一些结果进行再次翻译）　^2-7
++ 2.8支持不同的翻译目标语言，对于有道翻译，可以设置中英互译，文本翻译目标语言，图片翻译目标语言，对于复合翻译，同样可以设置中英互译，文本翻译目标语言，图片翻译目标语言 ^2-8
++ 2.9可以自由设置词典释义/机器翻译分界线，以此决定一段文本是使用词典释义还是机器翻译 ^2-9
++ 2.10可以自定义中转服务端口，自由选择端口去进行中转服务的开启和关闭 
++ 2.11可以自由决定文本译文颜色和图片译文颜色，符合个性化需求
++ 2.12支持文本翻译模式的自由切换（原句+译句交错显示，原句和译句分开显示）
++ 2.13支持图片翻译模式的自由切换（原句+译句交错显示，原句和译句分开显示）
++ 2.14支持多行文本翻译和图片翻译的翻译块翻译间隔的自定义设置 ^2-14
++ 2.15界面概览
++ ![整体界面概览上|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/整体界面概览上.png)
 
-- 2.1支持有道文本机器翻译吗 ^2-1
++ ![整体界面概览下|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/整体界面概览下.png)
++ 
+##  2.16可以对词汇本进行高自由度设置，如图所示
+![我的词汇本界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/我的词汇本界面.png)
 
-- 2.2支持有道文本词典释义^2-2
-
-- 2.3支持有道图片翻译 ^2-3
-
-- 2.4支持复合文本机器翻译 ^2-4
-
-- 2.5支持复合文本词典释义 ^2-5
-
-- 2.6支持复合图片翻译 ^2-6
-
-- 2.7支持显示框的二次翻译（在已经有的翻译结果显示框，能对显示框的一些结果进行再次翻译）　^2-7
-
-- 2.8支持不同的翻译目标语言，对于有道翻译，可以设置中英互译，文本翻译目标语言，图片翻译目标语言，对于复合翻译，同样可以设置中英互译，文本翻译目标语言，图片翻译目标语言
-  ^2-8
-
-- 2.9可以自由设置词典释义/机器翻译分界线，以此决定一段文本是使用词典释义还是机器翻译
-  ^2-9
-
-- 2.10可以自定义中转服务端口，自由选择端口去进行中转服务的开启和关闭
-
-- 2.11可以自由决定文本译文颜色和图片译文颜色，符合个性化需求
-
-- 2.12支持文本翻译模式的自由切换（原句+译句交错显示，原句和译句分开显示）
-
-- 2.13支持图片翻译模式的自由切换（原句+译句交错显示，原句和译句分开显示）
-
-- 2.14支持多行文本翻译和图片翻译的翻译块翻译间隔的自定义设置 ^2-14
-
-- 2.15界面概览
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/整体界面概览上.png"
-  alt="整体界面概览上|500" />
-  <figcaption aria-hidden="true">整体界面概览上|500</figcaption>
-  </figure>
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/整体界面概览下.png"
-  alt="整体界面概览下|500" />
-  <figcaption aria-hidden="true">整体界面概览下|500</figcaption>
-  </figure>
-
-- ## 2.16可以对词汇本进行高自由度设置，如图所示
-
-  <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/我的词汇本界面.png"
-  alt="我的词汇本界面|500" />
-  <figcaption aria-hidden="true">我的词汇本界面|500</figcaption>
-  </figure>
-
-- 2.16.1 支持对单词进行分组，并进行分组增添和删减操作，还可进行分组管理
-  ^2-16-1
-
-- 2.16.2 支持词库的增添单词操作和删减单词操作 ^2-16-2
-
-- 2.16.3 支持词汇本的超强正则链式搜索 ^2-16-3
-
-- 2.16.4
-  支持导入自已的词汇本，插件会自己进行适配，也支持导出，导出格式为json
-  ^2-16-4
-
-- 2.16.5 支持快捷键直接打开我的词汇本，方便快捷 ^2-16-5
-
-- 2.16.6 支持快捷键自动把单词/短语直接添加到我的词汇本，方便快捷^2-16-6
-  \## 2.17 附加其他功能
-
-- 2.17.1 其他功能-
-  翻译表格，支持翻译表格指定行和翻译表格指定列，如图，插入的表格格式支持csv,tsv,md,xlsx,ods,sqlite3，导出的翻译后的表格格式支持csv,tsv,md,xlsx,ods
-  ^2-17-1
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格指定行界面.png"
-  alt="翻译表格指定行界面|500" />
-  <figcaption aria-hidden="true">翻译表格指定行界面|500</figcaption>
-  </figure>
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格指定列界面.png"
-  alt="翻译表格指定列界面|500" />
-  <figcaption aria-hidden="true">翻译表格指定列界面|500</figcaption>
-  </figure>
-
-- 
-
-- 2.17.2 支持表格的繁体译简体 ^2-17-2
-
-- 2.17.3其他功能-表格文件和sqlite3操作 ，支持下图操作 ^2-17-3
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/表格文件和sqlite3操作界面.png"
-  alt="表格文件和sqlite3操作界面|500" />
-  <figcaption
-  aria-hidden="true">表格文件和sqlite3操作界面|500</figcaption>
-  </figure>
+ 
++ 2.16.1 支持对单词进行分组，并进行分组增添和删减操作，还可进行分组管理  ^2-16-1
++ 2.16.2 支持词库的增添单词操作和删减单词操作 ^2-16-2
++ 2.16.3 支持词汇本的超强正则链式搜索 ^2-16-3
++ 2.16.4  支持导入自已的词汇本，插件会自己进行适配，也支持导出，导出格式为json ^2-16-4
++ 2.16.5 支持快捷键直接打开我的词汇本，方便快捷 ^2-16-5
++ 2.16.6 支持快捷键自动把单词/短语直接添加到我的词汇本，方便快捷^2-16-6
+## 2.17 附加其他功能
++ 2.17.1 其他功能- 翻译表格，支持翻译表格指定行和翻译表格指定列，如图，插入的表格格式支持csv,tsv,md,xlsx,ods,sqlite3，导出的翻译后的表格格式支持csv,tsv,md,xlsx,ods  ^2-17-1
++ ![翻译表格指定行界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格指定行界面.png)
++ ![翻译表格指定列界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格指定列界面.png)
++ 
++ 2.17.2 支持表格的繁体译简体 ^2-17-2
++ 2.17.3其他功能-表格文件和sqlite3操作 ，支持下图操作 ^2-17-3
++ ![表格文件和sqlite3操作界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/表格文件和sqlite3操作界面.png)
 
 ## 2.18支持快捷键操作
++ 2.18.1快捷键概览
++ ![快捷键界面概览|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键界面概览.png)
+## 2.19 支持高级释义（只有词典释义界面才有高级释义）
 
-- 2.18.1快捷键概览
-- ![快捷键界面概览\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键界面概览.png)
-  \## 2.19 支持高级释义（只有词典释义界面才有高级释义）
+ ![词典释义高级按钮|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义高级按钮.png)
 
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义高级按钮.png"
-alt="词典释义高级按钮|500" />
-<figcaption aria-hidden="true">词典释义高级按钮|500</figcaption>
-</figure>
 
 # 3 准备工作（重中之重）
-
 ## 3.1 下载必要文件
-
-- 从(https://github.com/moujiawei/Obsidian-Translation/tree/main?tab=readme-ov-file)下载得到README.md
-  , main.js ,manifest.json, 其他的文件不做下载要求，main.ts
-  是源码，可供学习参考
-  - 从[Release Obsidian Translation Plugin v1.0.0 - Initial Release ·
-    moujiawei/Obsidian-Translation](https://github.com/moujiawei/Obsidian-Translation/releases/tag/v1.0.0)下载得到data.zip,dict_service.zip,server.exe,其他的文件不做下载要求，zip文件需要解压
-  - 把Obsidian
-    Translation文件夹放置在Obsidian的插件目录plugins下（如果没有该目录则需要你手动创建），如下图所示：
-    ![插件目录plugins\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/插件目录plugins.png)
-    Obsidian Translation的结构如下图所示： ![Obsidian
-    Translation结构\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Obsidian%20Translation结构.png)
++ 从(https://github.com/moujiawei/Obsidian-Translation/tree/main?tab=readme-ov-file)下载得到README.md , main.js ,manifest.json, 其他的文件不做下载要求，main.ts 是源码，可供学习参考
+  + 从[Release Obsidian Translation Plugin v1.0.0 - Initial Release · moujiawei/Obsidian-Translation](https://github.com/moujiawei/Obsidian-Translation/releases/tag/v1.0.0)下载得到data.zip,dict_service.zip,server.exe,其他的文件不做下载要求，zip文件需要解压
+  + 把Obsidian Translation文件夹放置在Obsidian的插件目录plugins下（如果没有该目录则需要你手动创建），如下图所示：
+     ![插件目录plugins|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/插件目录plugins.png)
+Obsidian Translation的结构如下图所示：
+ ![Obsidian Translation结构|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Obsidian%20Translation结构.png)
 
 ## 3.2 获取必要信息
-
 ### 3.2.1 获取有道翻译的图片翻译密钥和ID
-
-- 进入有道智云 AI开放平台进行注册，如图所示
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道智云%20AI开放平台.png"
-  alt="有道智云AI开放平台|500" />
-  <figcaption aria-hidden="true">有道智云AI开放平台|500</figcaption>
-  </figure>
-
-- 然后继续点击，进入开发者平台（如图所示）
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道智云%20AI开放平台2.png"
-  alt="有道智云 AI开放平台2|500" />
-  <figcaption aria-hidden="true">有道智云 AI开放平台2|500</figcaption>
-  </figure>
-
-- 进入应用总览，创建应用，（如图所示）
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/应用总览-创建应用.png"
-  alt="应用总览-创建应用|500" />
-  <figcaption aria-hidden="true">应用总览-创建应用|500</figcaption>
-  </figure>
-
-- 开始开通图片翻译服务（如图所示），应用类别可以随便选一个
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/开通图片翻译服务.png"
-  alt="开通图片翻译服务|500" />
-  <figcaption aria-hidden="true">开通图片翻译服务|500</figcaption>
-  </figure>
-
-- 回到应用总览，可以看到刚刚创建的应用，点击操作中的“查看”，获得应用密钥和应用ID（如下图所示）
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/应用总览-查看.png"
-  alt="应用总览-查看|500" />
-  <figcaption aria-hidden="true">应用总览-查看|500</figcaption>
-  </figure>
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/图片翻译-密钥.png"
-  alt="图片翻译-密钥|500" />
-  <figcaption aria-hidden="true">图片翻译-密钥|500</figcaption>
-  </figure>
-
-- 
++ 进入有道智云 AI开放平台进行注册，如图所示
++ ![有道智云AI开放平台|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道智云%20AI开放平台.png)
++ 然后继续点击，进入开发者平台（如图所示）
++  ![有道智云 AI开放平台2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道智云%20AI开放平台2.png)
++ 进入应用总览，创建应用，（如图所示）
++ ![应用总览-创建应用|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/应用总览-创建应用.png)
++ 开始开通图片翻译服务（如图所示），应用类别可以随便选一个
++ ![开通图片翻译服务|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/开通图片翻译服务.png)
++  回到应用总览，可以看到刚刚创建的应用，点击操作中的“查看”，获得应用密钥和应用ID（如下图所示）
++ ![应用总览-查看|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/应用总览-查看.png)
++ ![图片翻译-密钥|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/图片翻译-密钥.png)
++ 
 
 ### 3.2.2 获取有道翻译文本翻译密钥和ID
-
-- 过程和3.2.1
-  大同小异，只需要把“选择服务”从图片翻译变成文本翻译就行（如图所示）
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/开通图片翻译服务.png"
-  alt="开通图片翻译服务|500" />
-  <figcaption aria-hidden="true">开通图片翻译服务|500</figcaption>
-  </figure>
-
-- 然后获取应用ID和应用密钥
++ 过程和3.2.1 大同小异，只需要把“选择服务”从图片翻译变成文本翻译就行（如图所示）
++ ![开通图片翻译服务|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/开通图片翻译服务.png)
++ 然后获取应用ID和应用密钥
 
 ### 3.2.3 获取复合翻译的机器翻译的必要信息，如果你不想用复合翻译，只使用有道翻译，则该步骤可以跳过
 
 #### 3.2.3.1 注册并登录Microsoft Azure 账号
-
-- 填写信息，注册Microsoft
-  Azure账号需要你的VISA，MasterCard类别的信用卡信息，银联类别的信用卡不行
-
-- 注册完后，来到该界面（如下图所示）
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Microsoft%20Azure%20界面.png"
-  alt="Microsoft Azure 界面|500" />
-  <figcaption aria-hidden="true">Microsoft Azure 界面|500</figcaption>
-  </figure>
++ 填写信息，注册Microsoft Azure账号需要你的VISA，MasterCard类别的信用卡信息，银联类别的信用卡不行
++ 注册完后，来到该界面（如下图所示）
++ ![Microsoft Azure 界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Microsoft%20Azure%20界面.png)
 
 #### 3.2.3.2 获取复合翻译的机器翻译的密钥，位置/区域，终结点
++ 点击Azure服务下的“翻译工具”，创建服务，如果找不到可以在上方的搜索栏进行搜索，如下图所示
++ ![Azure- 翻译工具|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Azure-%20翻译工具.png)
++ 资源组建议选择已有的资源组或者点击"新建"链接创建新的资源组，- 建议: 为翻译服务创建一个专门的资源组，便于管理，名称可以自由填写，唯一就行，定价层选择免费层F0，每月有200万字符的免费额度，足够大部分人的使用，其他的“网络”，identity，Tags，“审阅并创建”均为默认设置，最后点击“审阅并创建”按钮，具体界面如下图所示
++ ![Azure 创建翻译工具界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Azure%20创建翻译工具界面.png)
++ 回到主页，可以看到刚刚创建的服务，如下图所示
++ ![Azure 翻译工具|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Azure%20翻译工具.png)
 
-- 点击Azure服务下的“翻译工具”，创建服务，如果找不到可以在上方的搜索栏进行搜索，如下图所示
++ 继续点击刚刚创建的服务，然后点击“点击此处查看终结点”，界面如下图所示，
++ ![Azure 翻译工具具体信息界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Azure%20翻译工具具体信息界面.png)
++ 得到三个重要信息：密钥，位置/区域，终结点，其中密钥1和密钥2选择一个就行了，选择文本翻译的终结点
++ ![翻译工具的密钥，位置区域，终结点|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译工具的密钥，位置区域，终结点.png)
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Azure-%20翻译工具.png"
-  alt="Azure- 翻译工具|500" />
-  <figcaption aria-hidden="true">Azure- 翻译工具|500</figcaption>
-  </figure>
 
-- 资源组建议选择已有的资源组或者点击”新建”链接创建新的资源组，- 建议:
-  为翻译服务创建一个专门的资源组，便于管理，名称可以自由填写，唯一就行，定价层选择免费层F0，每月有200万字符的免费额度，足够大部分人的使用，其他的“网络”，identity，Tags，“审阅并创建”均为默认设置，最后点击“审阅并创建”按钮，具体界面如下图所示
+### 3.2.4  获取复合翻译的图片翻译的必要信息，如果你不想用复合翻译，只使用有道翻译，则该步骤可以跳过
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Azure%20创建翻译工具界面.png"
-  alt="Azure 创建翻译工具界面|500" />
-  <figcaption aria-hidden="true">Azure 创建翻译工具界面|500</figcaption>
-  </figure>
++ 回到Microsoft Azure的主页，选择计算机视觉并点击，如果找不到可以在上方的搜索栏进行搜索，如下图所示
++ ![计算机视觉界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/计算机视觉界面.png)
+创建服务，信息填写和3.2.3.2过程类似，如下图所示
+![创建计算机视觉界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/创建计算机视觉界面.png)
 
-- 回到主页，可以看到刚刚创建的服务，如下图所示
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Azure%20翻译工具.png"
-  alt="Azure 翻译工具|500" />
-  <figcaption aria-hidden="true">Azure 翻译工具|500</figcaption>
-  </figure>
-
-- 继续点击刚刚创建的服务，然后点击“点击此处查看终结点”，界面如下图所示，
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Azure%20翻译工具具体信息界面.png"
-  alt="Azure 翻译工具具体信息界面|500" />
-  <figcaption aria-hidden="true">Azure
-  翻译工具具体信息界面|500</figcaption>
-  </figure>
-
-- 得到三个重要信息：密钥，位置/区域，终结点，其中密钥1和密钥2选择一个就行了，选择文本翻译的终结点
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译工具的密钥，位置区域，终结点.png"
-  alt="翻译工具的密钥，位置区域，终结点|500" />
-  <figcaption
-  aria-hidden="true">翻译工具的密钥，位置区域，终结点|500</figcaption>
-  </figure>
-
-### 3.2.4 获取复合翻译的图片翻译的必要信息，如果你不想用复合翻译，只使用有道翻译，则该步骤可以跳过
-
-- 回到Microsoft
-  Azure的主页，选择计算机视觉并点击，如果找不到可以在上方的搜索栏进行搜索，如下图所示
-- ![计算机视觉界面\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/计算机视觉界面.png)
-  创建服务，信息填写和3.2.3.2过程类似，如下图所示
-  ![创建计算机视觉界面\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/创建计算机视觉界面.png)
-
-回到主页，可以看到刚刚创建的服务，如下图所示
-
-![新的资源组2\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/新的资源组2.png)
-点击创建的服务后，获取密钥，位置/区域，终结点信息，如下图所示
-同样的，密钥1和密钥2随便选择一个即可
-![计算机视觉密钥，位置区域，终结点\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/计算机视觉密钥，位置区域，终结点.png)
+ 回到主页，可以看到刚刚创建的服务，如下图所示
+ 
+![新的资源组2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/新的资源组2.png)
+ 点击创建的服务后，获取密钥，位置/区域，终结点信息，如下图所示
+ 同样的，密钥1和密钥2随便选择一个即可
+ ![计算机视觉密钥，位置区域，终结点|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/计算机视觉密钥，位置区域，终结点.png)
 
 ## 3.3 在Obsidian Translation插件设置界面填写必要信息
 
-- 点击Obsidian
-  界面的左下角的设置按钮，样式为一个齿轮，出现如下界面，确保第三方插件的安全模式以经关闭，否在你不能使用第三方插件
++ 点击Obsidian 界面的左下角的设置按钮，样式为一个齿轮，出现如下界面，确保第三方插件的安全模式以经关闭，否在你不能使用第三方插件
++ ![Obsidian translation插件设置界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Obsidian%20translation插件设置界面.png)
++ 点击插件设置界面底部的有道翻译设置按钮和复合翻译设置按钮，并把从3.2得到的必要信息填入，如下图所示
++ ![有道翻译设置界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道翻译设置界面.png)
+![复合翻译设置界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合翻译设置界面.png)
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Obsidian%20translation插件设置界面.png"
-  alt="Obsidian translation插件设置界面|500" />
-  <figcaption aria-hidden="true">Obsidian
-  translation插件设置界面|500</figcaption>
-  </figure>
++ 然后填写中转服务设置的相关信息，包括server.exe路径，dict_service 路径，server.exe 路径类型，中转服务端口（可以选择一个没有被占用的）
++ ![中转服务设置|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/中转服务设置.png)
 
-- 点击插件设置界面底部的有道翻译设置按钮和复合翻译设置按钮，并把从3.2得到的必要信息填入，如下图所示
 
-- ![有道翻译设置界面\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道翻译设置界面.png)
-  ![复合翻译设置界面\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合翻译设置界面.png)
 
-- 然后填写中转服务设置的相关信息，包括server.exe路径，dict_service
-  路径，server.exe 路径类型，中转服务端口（可以选择一个没有被占用的）
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/中转服务设置.png"
-  alt="中转服务设置|500" />
-  <figcaption aria-hidden="true">中转服务设置|500</figcaption>
-  </figure>
 
 # 4 如何使用该插件
+## 4.1有道文本机器翻译[[#^2-1]]
++ 4.1.1 开启中转服务，运行server.exe:
++ 确保server.exe 路径填写正确，点击开启中转服务，如果端口被占用可以换一个中转服务端口，还是失败的话你可以找到server.exe ，手动运行server.exe , 开启成功后会有蓝色字体“当前有道中转服务端口：。。。”
++ ![有道中转服务端口启动|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道中转服务端口启动.png)
 
-## 4.1有道文本机器翻译\[\[#^2-1\]\]
 
-- 4.1.1 开启中转服务，运行server.exe:
 
-- 确保server.exe
-  路径填写正确，点击开启中转服务，如果端口被占用可以换一个中转服务端口，还是失败的话你可以找到server.exe
-  ，手动运行server.exe ,
-  开启成功后会有蓝色字体“当前有道中转服务端口：。。。”
++ 4.1.2 完成对应的快捷键设置，如下图所示：
++ “翻译当前笔记标题（弹窗显示）“快捷键：在Obsidian笔记页面，按下设置好的快捷键，即可自动翻译当前笔记页面的标题
++ “翻译当前行（弹窗显示）”快捷键：在Obsidian笔记页面，把光标放在某行中，无需选中任何内容，按下设置好的快捷键，即可自动翻译光标所在的行
++ “翻译选中内容（弹窗显示）”快捷键：在Obsidian笔记页面，用鼠标选中你想要翻译的内容，按下设置好的快捷键，即可自动翻译你选中的内容
++ “始终机器翻译选中文本（弹窗显示）”快捷键：在Obsidian笔记页面，用鼠标选中你想要翻译的内容，按下设置好的快捷键，即可始终用机器翻译的方式翻译选中的内容，不会用到词典释义
+![快捷键界面-有道文本翻译|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键界面-有道文本翻译.png)
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道中转服务端口启动.png"
-  alt="有道中转服务端口启动|500" />
-  <figcaption aria-hidden="true">有道中转服务端口启动|500</figcaption>
-  </figure>
++ 有道文本机器翻译界面如下图所示：
++ ![有道文本机器翻译1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道文本机器翻译1.png)
++ ![有道文本机器翻译2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道文本机器翻译2.png)
++ ![有道文本机器翻译3|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道文本机器翻译3.png)
 
-- 4.1.2 完成对应的快捷键设置，如下图所示：
 
-- “翻译当前笔记标题（弹窗显示）“快捷键：在Obsidian笔记页面，按下设置好的快捷键，即可自动翻译当前笔记页面的标题
+## 4.2 有道文本词典释义 [[#^2-2]]
++ 4.2.1 开启中转服务端口，如4.1.1
++ 4.2.2 完成对应的快捷键设置，如4.1.2
++ 4.2.3完成一些”细小“的设置，打开Obsidian Translation插件设置界面，设置好词典释义/机器翻译分界（英文单词数/中文汉字数）：
++ 应用举例- "hello" (1个单词) → 词典释义
 
-- “翻译当前行（弹窗显示）”快捷键：在Obsidian笔记页面，把光标放在某行中，无需选中任何内容，按下设置好的快捷键，即可自动翻译光标所在的行
+- "hello world" (2个单词) → 词典释义
 
-- “翻译选中内容（弹窗显示）”快捷键：在Obsidian笔记页面，用鼠标选中你想要翻译的内容，按下设置好的快捷键，即可自动翻译你选中的内容
+- "hello world today" (3个单词) → 词典释义
 
-- “始终机器翻译选中文本（弹窗显示）”快捷键：在Obsidian笔记页面，用鼠标选中你想要翻译的内容，按下设置好的快捷键，即可始终用机器翻译的方式翻译选中的内容，不会用到词典释义
-  ![快捷键界面-有道文本翻译\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键界面-有道文本翻译.png)
+- "hello world today is" (4个单词) → 机器翻译
 
-- 有道文本机器翻译界面如下图所示：
+- "你好" (2个汉字) → 词典释义
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道文本机器翻译1.png"
-  alt="有道文本机器翻译1|500" />
-  <figcaption aria-hidden="true">有道文本机器翻译1|500</figcaption>
-  </figure>
+- "你好世界" (4个汉字) → 词典释义
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道文本机器翻译2.png"
-  alt="有道文本机器翻译2|500" />
-  <figcaption aria-hidden="true">有道文本机器翻译2|500</figcaption>
-  </figure>
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道文本机器翻译3.png"
-  alt="有道文本机器翻译3|500" />
-  <figcaption aria-hidden="true">有道文本机器翻译3|500</figcaption>
-  </figure>
-
-## 4.2 有道文本词典释义 \[\[#^2-2\]\]
-
-- 4.2.1 开启中转服务端口，如4.1.1
-
-- 4.2.2 完成对应的快捷键设置，如4.1.2
-
-- 4.2.3完成一些”细小“的设置，打开Obsidian
-  Translation插件设置界面，设置好词典释义/机器翻译分界（英文单词数/中文汉字数）：
-
-- 应用举例- “hello” (1个单词) → 词典释义
-
-- “hello world” (2个单词) → 词典释义
-
-- “hello world today” (3个单词) → 词典释义
-
-- “hello world today is” (4个单词) → 机器翻译
-
-- “你好” (2个汉字) → 词典释义
-
-- “你好世界” (4个汉字) → 词典释义
-
-- “你好世界啊” (5个汉字) → 机器翻译
-
+- "你好世界啊" (5个汉字) → 机器翻译
 - 标点符合在长度计算中会被忽略
++ ![词典释义机器翻译分界|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义机器翻译分界.png)
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义机器翻译分界.png"
-  alt="词典释义机器翻译分界|500" />
-  <figcaption aria-hidden="true">词典释义机器翻译分界|500</figcaption>
-  </figure>
++ 4.2.4有道文本词典释义界面包括基本释义，例句，网络释义三大部分，如下图所示
++ ![有道hello1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道hello1.png)
++ 
++ ![有道hello2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道hello2.png)
++ ![有道take1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道take1.png)
++ ![有道take2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道take2.png)
+![有道世界1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道世界1.png)
+![有道世界2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道世界2.png)
 
-- 4.2.4有道文本词典释义界面包括基本释义，例句，网络释义三大部分，如下图所示
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道hello1.png"
-  alt="有道hello1|500" />
-  <figcaption aria-hidden="true">有道hello1|500</figcaption>
-  </figure>
-
-- 
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道hello2.png"
-  alt="有道hello2|500" />
-  <figcaption aria-hidden="true">有道hello2|500</figcaption>
-  </figure>
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道take1.png"
-  alt="有道take1|500" />
-  <figcaption aria-hidden="true">有道take1|500</figcaption>
-  </figure>
-
-- ![有道take2\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道take2.png)
-  ![有道世界1\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道世界1.png)
-  ![有道世界2\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道世界2.png)
-
-## 4.3 支持有道图片翻译\[\[#^2-3\]\]
-
+## 4.3 支持有道图片翻译[[#^2-3]]
 ### 4.3.1 开启中转服务，过程如4.1.1
-
 ### 4.3.2 完成对应的快捷键设置，如下图所示
-
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键设置-有道图片翻译.png"
-alt="快捷键设置-有道图片翻译|500" />
-<figcaption aria-hidden="true">快捷键设置-有道图片翻译|500</figcaption>
-</figure>
+![快捷键设置-有道图片翻译|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键设置-有道图片翻译.png)
 
 ### 4.3.3 用鼠标选中图片的链接，按下设置好的快捷键，即可自动翻译图片内容，
++ 如下图所示,点击图片，图片上方会显示其链接，
+“
+![take图片链接|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/take图片链接.png)
 
-- 如下图所示,点击图片，图片上方会显示其链接， “
-  ![take图片链接\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/take图片链接.png)
++ 下图是翻译结果图
++ ![有道图片翻译1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道图片翻译1.png)
++ ![有道图片翻译2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道图片翻译2.png)
 
-- 下图是翻译结果图
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道图片翻译1.png"
-  alt="有道图片翻译1|500" />
-  <figcaption aria-hidden="true">有道图片翻译1|500</figcaption>
-  </figure>
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道图片翻译2.png"
-  alt="有道图片翻译2|500" />
-  <figcaption aria-hidden="true">有道图片翻译2|500</figcaption>
-  </figure>
-
-## 4.4 支持复合文本机器翻译\[\[#^2-4\]\]
-
+## 4.4 支持复合文本机器翻译[[#^2-4]]
 ### 4.4.1 切换模式，从有道翻译模式切换到复合翻译模式，如下图所示
 
-![插件设置界面-翻译模式\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/插件设置界面-翻译模式.png)
-\### 4.4.2 开启中转服务 +
-从有道翻译模式切换回复合翻译模式时，当前有道中转服务端口会自动变成当前复合翻译端口，如果转换失败，则需要你手动启动，确保dict_service
-路径填写正确，且dict_service
-文件夹里面的内容不能移动到别处，启动过程如4.1.1 +
-![复合翻译端口启动\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合翻译端口启动.png)
+![插件设置界面-翻译模式|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/插件设置界面-翻译模式.png)
+### 4.4.2 开启中转服务
++ 从有道翻译模式切换回复合翻译模式时，当前有道中转服务端口会自动变成当前复合翻译端口，如果转换失败，则需要你手动启动，确保dict_service 路径填写正确，且dict_service 文件夹里面的内容不能移动到别处，启动过程如4.1.1
++ ![复合翻译端口启动|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合翻译端口启动.png)
 
 ### 4.4.3 复合文本机器翻译的翻译界面和4.1 有道文本机器翻译界面一样，只是翻译源不同
 
-## 4.5 复合文本词典释义\[\[#^2-5\]\]
+
+## 4.5 复合文本词典释义[[#^2-5]]
 
 ### 4.5.1如4.4.1切换模式
-
 ### 4.5.2 如4.4.2开启中转服务
-
 ### 4.5.3 复合文本词典释义界面如下图所示，和有道文本词典释义界面有不同
+![复合hello1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合hello1.png)
+![复合hello2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合hello2.png)
 
-![复合hello1\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合hello1.png)
-![复合hello2\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合hello2.png)
+![复合take1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合take1.png)
+![复合take2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合take2.png)
 
-![复合take1\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合take1.png)
-![复合take2\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合take2.png)
+![复合你好1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合你好1.png)
+![复合世界1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合世界1.png)
+![复合世界2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合世界2.png)
 
-![复合你好1\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合你好1.png)
-![复合世界1\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合世界1.png)
-![复合世界2\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合世界2.png)
 
-## 4.6 复合图片翻译\[\[#^2-6\]\]
 
+## 4.6 复合图片翻译[[#^2-6]]
 ### 4.6.1 切换模式，如4.4.1
-
 ### 4.6.2 开启中转，如4.4.2
-
 ### 4.6.3 复合图片翻译界面和有道图片翻译界面UI一样，只不过是翻译源不同
 
-## 4.7 显示框的二次翻译\[\[#^2-7\]\]
 
+
+## 4.7 显示框的二次翻译[[#^2-7]]
 ### 4.7.1 显示框的二次翻译的快捷键（同时适用于有道翻译和复合翻译）
-
-- 显示框的二次翻译的快捷键和翻译当前行（弹窗显示）快捷键有联系，如下图我的翻译当前行（弹窗显示）快捷键为Ctrl +
-  Shift + G ，则二次翻译的快捷键就是Shift +
-  G，如果翻译当前行（弹窗显示）快捷键为Ctrl + Shift + L，
-  则二次翻译的快捷键就是Shift + L
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/二次翻译快捷键.png"
-  alt="二次翻译快捷键|500" />
-  <figcaption aria-hidden="true">二次翻译快捷键|500</figcaption>
-  </figure>
++ 显示框的二次翻译的快捷键和翻译当前行（弹窗显示）快捷键有联系，如下图我的翻译当前行（弹窗显示）快捷键为Ctrl + Shift + G ，则二次翻译的快捷键就是Shift + G，如果翻译当前行（弹窗显示）快捷键为Ctrl + Shift + L， 则二次翻译的快捷键就是Shift + L
++ ![二次翻译快捷键|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/二次翻译快捷键.png)
 
 ### 4.7.2 具体操作：
++ 在已经有的翻译结果显示框，选中你仍觉的困惑的语句，按下4.7.1设置好的快捷键，即可进行二次翻译，该翻译结果会受到插件设置界面的词典释义/机器翻译分界影响，去自动决定是机器翻译方式还是词典释义方式，如下图所示
+![二次翻译-词典|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/二次翻译-词典.png)
+![二次翻译-机器翻译|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/二次翻译-机器翻译.png)
 
-- 在已经有的翻译结果显示框，选中你仍觉的困惑的语句，按下4.7.1设置好的快捷键，即可进行二次翻译，该翻译结果会受到插件设置界面的词典释义/机器翻译分界影响，去自动决定是机器翻译方式还是词典释义方式，如下图所示
-  ![二次翻译-词典\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/二次翻译-词典.png)
-  ![二次翻译-机器翻译\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/二次翻译-机器翻译.png)
 
-## 4.8 不同的翻译目标语言（对有道翻译和复合翻译都同样适用） \[\[#^2-8\]\]
 
-- 开启中英互译按钮后，文本翻译目标语言和图片翻译目标语言就不能被设置了，只有关闭中英互译按钮后，文本翻译目标语言和图片翻译目标语言才能被设置，如下图所示
+## 4.8 不同的翻译目标语言（对有道翻译和复合翻译都同样适用） [[#^2-8]]
++ 开启中英互译按钮后，文本翻译目标语言和图片翻译目标语言就不能被设置了，只有关闭中英互译按钮后，文本翻译目标语言和图片翻译目标语言才能被设置，如下图所示
 
-![目标语言1\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/目标语言1.png)
-![目标语言2\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/目标语言2.png)
+![目标语言1|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/目标语言1.png)
+![目标语言2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/目标语言2.png)
 
-## 4.9自由设置词典释义/机器翻译分界线，以此决定一段文本是使用词典释义还是机器翻译 \[\[#^2-9\]\]
 
+## 4.9自由设置词典释义/机器翻译分界线，以此决定一段文本是使用词典释义还是机器翻译 [[#^2-9]]
 ### 4.9.1 词典释义/机器翻译分界线逻辑
+- "hello" (1个单词) → 词典释义
 
-- “hello” (1个单词) → 词典释义
+- "hello world" (2个单词) → 词典释义
 
-- “hello world” (2个单词) → 词典释义
+- "hello world today" (3个单词) → 词典释义
 
-- “hello world today” (3个单词) → 词典释义
+- "hello world today is" (4个单词) → 机器翻译
 
-- “hello world today is” (4个单词) → 机器翻译
+- "你好" (2个汉字) → 词典释义
 
-- “你好” (2个汉字) → 词典释义
+- "你好世界" (4个汉字) → 词典释义
 
-- “你好世界” (4个汉字) → 词典释义
-
-- “你好世界啊” (5个汉字) → 机器翻译
-
+- "你好世界啊" (5个汉字) → 机器翻译
 - - 标点符号：在语言检测和长度计算中被忽略
-    ![词典释义机器翻译\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义机器翻译.png)
+![词典释义机器翻译|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义机器翻译.png)
 
-## 4.14 多行文本翻译和图片翻译的翻译块翻译间隔的自定义设置 \[\[#^2-14\]\]
 
+## 4.14 多行文本翻译和图片翻译的翻译块翻译间隔的自定义设置 [[#^2-14]]
 ### 4.14.1 点击有道翻译设置按钮，可以自己设置有道翻译模式的多行文本/图片翻译速度
-
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道-多行文本图片翻译速度.png"
-alt="有道-多行文本图片翻译速度|500" />
-<figcaption
-aria-hidden="true">有道-多行文本图片翻译速度|500</figcaption>
-</figure>
+![有道-多行文本图片翻译速度|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道-多行文本图片翻译速度.png)
 
 ### 4.14.2 点击复合翻译设置按钮，可以自己设置复合翻译模式的多行文本/图片翻译速度
-
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合-多行文本图片翻译速度.png"
-alt="复合-多行文本图片翻译速度|500" />
-<figcaption
-aria-hidden="true">复合-多行文本图片翻译速度|500</figcaption>
-</figure>
+![复合-多行文本图片翻译速度|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/复合-多行文本图片翻译速度.png)
 
 ## 4.16 对词汇本进行高自由度设置
+### 4.16.1对单词进行分组，并进行分组增添和删减操作，并进行分组管理[[#^2-16-1]]
++ 点击单词的分组按钮，可进入单词的分组管理界面（如下图所示）
++ ![我得词汇本|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/我的词汇本.png)
 
-### 4.16.1对单词进行分组，并进行分组增添和删减操作，并进行分组管理\[\[#^2-16-1\]\]
+![分组管理|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/分组管理.png)
++ 输入的分组路径最多5级，还可以选择已有分组，更便利
+![创建分组|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/创建分组.png)
++ 选择完后，分组栏下会显示该单词的分组路径，同时分组管理界面允许你为一个单词创建多个分组路径，如下图所示
++ ![一个单词多个分组路径|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/一个单词多个分组路径.png)
++ 点击全部分组按钮，你可以在生成的界面中看到你所有的已存在的分组，并可以依靠这些分组找到该分组下的单词
++ ![全部分组按钮|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/全部分组按钮.png)
++ ![分组下的单词列表|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/分组下的单词列表.png)
+### 4.16.2 词库的增添单词操作和删减单词操作[[#^2-16-2]]
+#### 4.16.2.1 词库的增添单词操作
+![新建单词短语|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/新建单词短语.png)
++ 右键点击该单词/短语，出现选项“在该单词/短语下方创建一个新单词/短语”
+![右键新建单词短语|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/右键新建单词短语.png)
 
-- 点击单词的分组按钮，可进入单词的分组管理界面（如下图所示）
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/我的词汇本.png"
-  alt="我得词汇本|500" />
-  <figcaption aria-hidden="true">我得词汇本|500</figcaption>
-  </figure>
-
-![分组管理\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/分组管理.png) +
-输入的分组路径最多5级，还可以选择已有分组，更便利
-![创建分组\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/创建分组.png) +
-选择完后，分组栏下会显示该单词的分组路径，同时分组管理界面允许你为一个单词创建多个分组路径，如下图所示 +
-![一个单词多个分组路径\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/一个单词多个分组路径.png) +
-点击全部分组按钮，你可以在生成的界面中看到你所有的已存在的分组，并可以依靠这些分组找到该分组下的单词 +
-![全部分组按钮\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/全部分组按钮.png) +
-![分组下的单词列表\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/分组下的单词列表.png)
-\### 4.16.2 词库的增添单词操作和删减单词操作\[\[#^2-16-2\]\] \####
-4.16.2.1 词库的增添单词操作
-![新建单词短语\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/新建单词短语.png) +
-右键点击该单词/短语，出现选项“在该单词/短语下方创建一个新单词/短语”
-![右键新建单词短语\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/右键新建单词短语.png)
 
 #### 4.16.2.2 词库的删减单词/短语操作
+![单词删除|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/单词删除.png)
 
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/单词删除.png"
-alt="单词删除|500" />
-<figcaption aria-hidden="true">单词删除|500</figcaption>
-</figure>
++ 删减后的单词/短语会被收纳到回收站中，你可以在回收站还原或彻底删除这些单词/短语，如下图所示
++ ![回收站|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/回收站.png)
 
-- 删减后的单词/短语会被收纳到回收站中，你可以在回收站还原或彻底删除这些单词/短语，如下图所示
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/回收站.png"
-  alt="回收站|500" />
-  <figcaption aria-hidden="true">回收站|500</figcaption>
-  </figure>
-
-### 4.16.3 词汇本的超强正则链式搜索\[\[#^2-16-3\]\]
-
+### 4.16.3 词汇本的超强正则链式搜索[[#^2-16-3]]
 #### 4.16.3.1 搜索模式
+搜索框左侧有一个模式切换按钮，可以在两种搜索模式间切换：
+- 模糊搜索：搜索单词、释义和例句中的所有内容
+- 单词名和短语名搜索：只搜索单词名和短语名字段
+- 比如下图，模式为模糊搜索，当搜索adj时，会把释义栏中所有带有adj字符串的单词/短语都检索出来，同时单词栏的内容也在检索范围中
+- ![模糊搜索adj|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/模糊搜索adj.png)
+- 比如下图，模式为单词名和短语名搜索，当搜索adj时，释义栏的内容不在检索范围中，只会把单词栏中所有带有adj字符串的单词/短语都检索出来
+- ![单词名和短语名搜索adj|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/单词名和短语名搜索adj.png)
 
-搜索框左侧有一个模式切换按钮，可以在两种搜索模式间切换： -
-模糊搜索：搜索单词、释义和例句中的所有内容 -
-单词名和短语名搜索：只搜索单词名和短语名字段 -
-比如下图，模式为模糊搜索，当搜索adj时，会把释义栏中所有带有adj字符串的单词/短语都检索出来，同时单词栏的内容也在检索范围中 -
-![模糊搜索adj\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/模糊搜索adj.png) -
-比如下图，模式为单词名和短语名搜索，当搜索adj时，释义栏的内容不在检索范围中，只会把单词栏中所有带有adj字符串的单词/短语都检索出来 -
-![单词名和短语名搜索adj\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/单词名和短语名搜索adj.png)
 
 #### 4.16.3.2 正则搜索
-
 ##### 4.16.3.2.1 按单词数量过滤：
+ 按单词数量过滤：
+- * -匹配单个单词的词条
+- ** 匹配包含2个单词的词条
+- *** 匹配包含3个单词的词条
+- 以此类推
+##### 4.16.3.2.2 按首字母过滤：
++ 如
+-  “*a”  匹配以字母a开头的单词/短语
 
- 按单词数量过滤： - * -匹配单个单词的词条 -
-** 匹配包含2个单词的词条 -***  匹配包含3个单词的词条 - 以此类推 \#####
-4.16.3.2.2 按首字母过滤： + 如 - “\*a”  匹配以字母a开头的单词/短语
-
-- “\*b”  匹配以字母b开头的单词/短语
+-   “*b”  匹配以字母b开头的单词/短语
 - 以此类推
 
 ##### 4.16.3.2.3 例子：
+- act\*  搜索包含"act"且是单个单词的词条
+- *a\** - 搜索以a开头且包含2个单词的词条
+-  *a\act\*  搜索以a开头、包含"act"且是单个单词的词条
+- hello\world  搜索同时包含"hello"和"world"的词条
 
-- act\*  搜索包含”act”且是单个单词的词条
-- *a\** - 搜索以a开头且包含2个单词的词条
-- \*a\*  搜索以a开头、包含”act”且是单个单词的词条
-- hello  搜索同时包含”hello”和”world”的词条
+### 4.16.4 导入自已的词汇本，插件会自己进行适配，也支持导出，导出格式为json [[#^2-16-4]]
+![我的词汇本的导出和导入|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/我的词汇本的导出和导入.png)
 
-### 4.16.4 导入自已的词汇本，插件会自己进行适配，也支持导出，导出格式为json \[\[#^2-16-4\]\]
 
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/我的词汇本的导出和导入.png"
-alt="我的词汇本的导出和导入|500" />
-<figcaption aria-hidden="true">我的词汇本的导出和导入|500</figcaption>
-</figure>
+### 4.16.5 快捷键直接打开我的词汇本，方便快捷[[#^2-16-5]]
+![快捷键打开词汇本|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键打开词汇本.png)
 
-### 4.16.5 快捷键直接打开我的词汇本，方便快捷\[\[#^2-16-5\]\]
+### 4.16.6 快捷键自动把单词/短语直接添加到我的词汇本，方便快捷[[#^2-16-6]]
++ 设置好对应的快捷键，如下图所示
++ ![快捷键词典释义并加入词汇本|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键词典释义并加入词汇本.png)
++ 选中内容，按下快捷键，即可把单词/短语直接添加到我的词汇本
++ 选中的内容有如下要求：
++ 1.不能有中文字符
++ 2.选中的内容的单词数不能超过插件设置界面的词典释义/机器翻译分界的英文要求
++ 注意：进行添加操作过程之前要把对应模式的对应中转服务端口打开，否则会有添加错误的报错提示
 
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键打开词汇本.png"
-alt="快捷键打开词汇本|500" />
-<figcaption aria-hidden="true">快捷键打开词汇本|500</figcaption>
-</figure>
-
-### 4.16.6 快捷键自动把单词/短语直接添加到我的词汇本，方便快捷\[\[#^2-16-6\]\]
-
-- 设置好对应的快捷键，如下图所示
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/快捷键词典释义并加入词汇本.png"
-  alt="快捷键词典释义并加入词汇本|500" />
-  <figcaption
-  aria-hidden="true">快捷键词典释义并加入词汇本|500</figcaption>
-  </figure>
-
-- 选中内容，按下快捷键，即可把单词/短语直接添加到我的词汇本
-
-- 选中的内容有如下要求：
-
-- 1.不能有中文字符
-
-- 2.选中的内容的单词数不能超过插件设置界面的词典释义/机器翻译分界的英文要求
-
-- 注意：进行添加操作过程之前要把对应模式的对应中转服务端口打开，否则会有添加错误的报错提示
 
 ## 4.17 其他功能
-
-### 4.17.1 支持翻译表格指定行和翻译表格指定列 \[\[#^2-17-1\]\]
-
-- 点击“其他功能”按钮，然后点击“翻译表格”按钮，进入下图界面
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格界面.png"
-  alt="翻译表格界面|500" />
-  <figcaption aria-hidden="true">翻译表格界面|500</figcaption>
-  </figure>
-
-- 点击“翻译表格指定行”按钮，进入下图界面
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格指定行.png"
-  alt="翻译表格指定行|500" />
-  <figcaption aria-hidden="true">翻译表格指定行|500</figcaption>
-  </figure>
+### 4.17.1 支持翻译表格指定行和翻译表格指定列 [[#^2-17-1]]
++ 点击“其他功能”按钮，然后点击“翻译表格”按钮，进入下图界面
++ ![翻译表格界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格界面.png)
++ 点击“翻译表格指定行”按钮，进入下图界面
++ ![翻译表格指定行|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格指定行.png)
 
 点击插入表格，表格文件类型支持csv,tsv,md,xlsx,ods,sqlite3，选择一个表格文件，进入如下界面
-![翻译表格指定行具体\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格指定行具体.png) +
-选择翻译模型(“复合翻译/有道翻译“)，选择目标语言，选定你想要翻译的行，如果选择有道翻译，则对应的中转服务端口一定要开启，对于复合翻译同样如此
+![翻译表格指定行具体|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译表格指定行具体.png)
++ 选择翻译模型("复合翻译/有道翻译“)，选择目标语言，选定你想要翻译的行，如果选择有道翻译，则对应的中转服务端口一定要开启，对于复合翻译同样如此
 
-- 如何选定想要翻译的行：直接鼠标点击想要翻译的行就行，如下图所示
++ 如何选定想要翻译的行：直接鼠标点击想要翻译的行就行，如下图所示
++ ![选中想要翻译的行|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/选中想要翻译的行.png)
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/选中想要翻译的行.png"
-  alt="选中想要翻译的行|500" />
-  <figcaption aria-hidden="true">选中想要翻译的行|500</figcaption>
-  </figure>
 
-- 点击“翻译”按钮，只支持“导出为自定义类型文件”，不支持“翻译结果覆盖原文件”和“生成副本文件”
-  ![点击翻译按钮\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/点击翻译按钮.png)
++ 点击“翻译”按钮，只支持“导出为自定义类型文件”，不支持“翻译结果覆盖原文件”和“生成副本文件”
+![点击翻译按钮|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/点击翻译按钮.png)
 
-- 导出的翻译后的表格格式支持csv,tsv,md,xlsx,ods，翻译完成后可点击“查看翻译后表格”进行查看
 
-- 对于翻译表格指定列同样如此
++ 导出的翻译后的表格格式支持csv,tsv,md,xlsx,ods，翻译完成后可点击“查看翻译后表格”进行查看
 
-### 4.17.2 表格的繁体译简体 \[\[#^2-17-2\]\]
++ 对于翻译表格指定列同样如此
 
-- 如下图，只要目标语言选择为中文，在翻译的过程中即可把繁体翻译成简体，对于翻译表格指定行和翻译表格指定列都适用
+### 4.17.2 表格的繁体译简体 [[#^2-17-2]]
++ 如下图，只要目标语言选择为中文，在翻译的过程中即可把繁体翻译成简体，对于翻译表格指定行和翻译表格指定列都适用
++ ![表格翻译繁体变简体|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/表格翻译繁体变简体.png)
++ 
+### 4.17.3 表格文件和sqlite3操作 [[#^2-17-3
+]]
++ 点击”其他功能“按钮，再点击”表格文件和sqlite3操作"按钮,支持如下操作
++ ![表格文件和sqlite3操作|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/表格文件和sqlite3操作.png)
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/表格翻译繁体变简体.png"
-  alt="表格翻译繁体变简体|500" />
-  <figcaption aria-hidden="true">表格翻译繁体变简体|500</figcaption>
-  </figure>
 
-- ### 4.17.3 表格文件和sqlite3操作 \[\[#^2-17-3\]\]
+## 4.19 高级释义（只有词典释义界面才有高级释义）[[#2.19 支持高级释义（只有词典释义界面才有高级释义）]]
++ 高级释义对于有道翻译和复合翻译都适用，如下图
++ ![词典释义高级按钮|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义高级按钮.png)
++ ![词典释义高级按钮2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义高级按钮2.png)
++ 注意：只有词典释义界面才有高级释义按钮，并且高级释义只对英文单词短语有效，中文没有高级释义
++ 点击“高级”按钮，可以显示该单词/短语的不同释义的序列号Interpretation_serial_number, 词性Part_of_speech，近义词Synonyms'，释义Interpretation，例句Example_sentence，相关短语和派生词Related_phrases_derivatives，如下图所示
++ 可对该表进行二次翻译，如何进行二次翻译详见[[#4.7 显示框的二次翻译 2-7]]
++ ![高级释义界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/高级释义界面.png)
 
-- 点击”其他功能“按钮，再点击”表格文件和sqlite3操作”按钮,支持如下操作
 
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/表格文件和sqlite3操作.png"
-  alt="表格文件和sqlite3操作|500" />
-  <figcaption aria-hidden="true">表格文件和sqlite3操作|500</figcaption>
-  </figure>
-
-## 4.19 高级释义（只有词典释义界面才有高级释义）\[\[#2.19 支持高级释义（只有词典释义界面才有高级释义）\]\]
-
-- 高级释义对于有道翻译和复合翻译都适用，如下图
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义高级按钮.png"
-  alt="词典释义高级按钮|500" />
-  <figcaption aria-hidden="true">词典释义高级按钮|500</figcaption>
-  </figure>
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/词典释义高级按钮2.png"
-  alt="词典释义高级按钮2|500" />
-  <figcaption aria-hidden="true">词典释义高级按钮2|500</figcaption>
-  </figure>
-
-- 注意：只有词典释义界面才有高级释义按钮，并且高级释义只对英文单词短语有效，中文没有高级释义
-
-- 点击“高级”按钮，可以显示该单词/短语的不同释义的序列号Interpretation_serial_number,
-  词性Part_of_speech，近义词Synonyms’，释义Interpretation，例句Example_sentence，相关短语和派生词Related_phrases_derivatives，如下图所示
-
-- 可对该表进行二次翻译，如何进行二次翻译详见\[\[#4.7 显示框的二次翻译
-  2-7\]\]
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/高级释义界面.png"
-  alt="高级释义界面|500" />
-  <figcaption aria-hidden="true">高级释义界面|500</figcaption>
-  </figure>
 
 # 5 可能会有的问题及解决方案
-
 ## 5.1 server.exe 路径填写正确，为什么还会报出“server.exe 中转服务启动失败，请检查路径和依赖，若稍后弹出启动成功则无需理会本提示”，如何解决
+![启动中转服务失败|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/启动中转服务失败.png)
 
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/启动中转服务失败.png"
-alt="启动中转服务失败|500" />
-<figcaption aria-hidden="true">启动中转服务失败|500</figcaption>
-</figure>
++ 答：找到指定填写路径下的server.exe ,手动运行，出现如下界面，然后Ctrl + C退出或点击右上角的关闭按钮，再次回到插件设置界面点击“开启中转服务”按钮，你问我为什么，嘿嘿，我也不知道，姑且当成一个神奇的bug.......
++ ![手动运行server.exe界面|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/手动运行server.exe界面.png)
 
-- 答：找到指定填写路径下的server.exe ,手动运行，出现如下界面，然后Ctrl +
-  C退出或点击右上角的关闭按钮，再次回到插件设置界面点击“开启中转服务”按钮，你问我为什么，嘿嘿，我也不知道，姑且当成一个神奇的bug…….
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/手动运行server.exe界面.png"
-  alt="手动运行server.exe界面|500" />
-  <figcaption aria-hidden="true">手动运行server.exe界面|500</figcaption>
-  </figure>
 
 ## 5.2 复合翻译模式下翻译语句会出现“（没有基本释义）”，这是为什么，如下图所示
+![翻译没有基本释义|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译没有基本释义.png)
 
-<figure>
-<img
-src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/翻译没有基本释义.png"
-alt="翻译没有基本释义|500" />
-<figcaption aria-hidden="true">翻译没有基本释义|500</figcaption>
-</figure>
++ 答：在复合翻译模式下如果译文和原文一样，则译文部分会显示为“（没有基本释义）”，所以不用担心，这是正常现象，有道翻译模式下则会完整显示和原文一样的译文
 
-- 答：在复合翻译模式下如果译文和原文一样，则译文部分会显示为“（没有基本释义）”，所以不用担心，这是正常现象，有道翻译模式下则会完整显示和原文一样的译文
 
-## 5.3 “清理所有api_dict.exe 进程”按钮和“清理所有server.exe 进程”按钮有什么用，如下图所示
+## 5.3  “清理所有api_dict.exe 进程”按钮和“清理所有server.exe 进程”按钮有什么用，如下图所示
+![中转服务器设置的3个按钮2|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/中转服务器设置的3个按钮2.png)
++ 答：由于种种原因，任务管理器会残留进程，如api_dict.exe 进程和Node.js JavaScript Runtime 进程，这些按钮可以直接关闭任务管理器的所有残留api_dict.exe 进程Node.js JavaScript Runtime 进程。 所以你可以定期按下这两个按钮，清理进程
+## 5.4 有道翻译的API和复合翻译的API要付费吗，如何查看额度使用量
++ 答：对于有道翻译API，注册登录并进行身份验证后可获得50元的免费额度，免费额度消耗完后就只能通过资源包充值的方式才能继续使用，有道翻译API不支持每月重置免费额度
++ 对于复合翻译API（实际是微软Azure API），注册登陆后对于微软文本机器翻译API有每月２００万字符的免费额度，对于微软ｏｃｒ图片翻译API有每月５０００次的免费额度，使用完后就必须付费翻译，
+  好消息：复合翻译API支持每月重置免费额度，这一点比有道翻译API好太多了，哈哈
++ 查看有道翻译API的额度使用量如下图所示：输入(https://ai.youdao.com/),点击界面右上角的个人用户，![有道智云右上角|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道智云右上角.png)
++ 查看复合翻译API（实际是微软Azure API）的额度使用量：进入主页，点击你想要查看额度使用量的资源，点击左栏的“指标”，如下图所示
++ ![Microsoft Azure 的指标|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Microsoft%20Azure%20的指标.png)
++ 添加指标，选择合适的度量值，聚合，设置右上角的时间参数，查看下方的额度使用数据，对于微软文本机器翻译和微软ocr图片翻译都是如此，如下图所示
++ ![Microsoft Azure 指标的添加指标具体|800](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Microsoft%20Azure%20指标的添加指标具体.png)
 
-![中转服务器设置的3个按钮2\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/中转服务器设置的3个按钮2.png) +
-答：由于种种原因，任务管理器会残留进程，如api_dict.exe 进程和Node.js
-JavaScript Runtime
-进程，这些按钮可以直接关闭任务管理器的所有残留api_dict.exe 进程Node.js
-JavaScript Runtime 进程。 所以你可以定期按下这两个按钮，清理进程 \## 5.4
-有道翻译的API和复合翻译的API要付费吗，如何查看额度使用量 +
-答：对于有道翻译API，注册登录并进行身份验证后可获得50元的免费额度，免费额度消耗完后就只能通过资源包充值的方式才能继续使用，有道翻译API不支持每月重置免费额度 +
-对于复合翻译API（实际是微软Azure
-API），注册登陆后对于微软文本机器翻译API有每月２００万字符的免费额度，对于微软ｏｃｒ图片翻译API有每月５０００次的免费额度，使用完后就必须付费翻译，
-好消息：复合翻译API支持每月重置免费额度，这一点比有道翻译API好太多了，哈哈 +
-查看有道翻译API的额度使用量如下图所示：输入(https://ai.youdao.com/),点击界面右上角的个人用户，![有道智云右上角\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/有道智云右上角.png) +
-查看复合翻译API（实际是微软Azure
-API）的额度使用量：进入主页，点击你想要查看额度使用量的资源，点击左栏的“指标”，如下图所示 +
-![Microsoft Azure
-的指标\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Microsoft%20Azure%20的指标.png) +
-添加指标，选择合适的度量值，聚合，设置右上角的时间参数，查看下方的额度使用数据，对于微软文本机器翻译和微软ocr图片翻译都是如此，如下图所示 +
-![Microsoft Azure
-指标的添加指标具体\|800](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/Microsoft%20Azure%20指标的添加指标具体.png)
+
+
 
 # 6 你可能感兴趣
-
 ## 6.1 为什么有道翻译模式要用server.exe ,复合翻译模式要用api_dict.exe ，这两个exe的作用是什么，为什么必须这么做，没有其他替代方案吗
-
 ### 6.1.1 server.exe 作用：
++ server.exe 是一个中转服务器，负责代理有道翻译API的调用
++ 将Obsidian插件的请求转发到有道翻译的官方API
++ 处理有道API的请求/响应格式
+### 6.1.2 api_dict.exe 作用：
++ api_dict.exe 提供本地词典查询服务
++ 直接访问本地的 dict_service文件夹下的en-zh.sqlite3,zh-en.sqlite3,句子en-zh.tsv
++ 提供 /api/dict 接口供插件调用
 
-- server.exe 是一个中转服务器，负责代理有道翻译API的调用
-- 将Obsidian插件的请求转发到有道翻译的官方API
-- 处理有道API的请求/响应格式 \### 6.1.2 api_dict.exe 作用：
-- api_dict.exe 提供本地词典查询服务
-- 直接访问本地的 dict_service文件夹下的en-zh.sqlite3,zh-en.sqlite3,句子en-zh.tsv
-- 提供 /api/dict 接口供插件调用
 
 ### 6.1.3 为什么必须要有server.exe
-
-- 跨域限制：浏览器有跨域限制，需要本地代理,浏览器阻止直接从 Obsidian
-  插件（本地文件）访问远程有道翻译API（CORS限制）
-- 有道API需要复杂的签名算法，需要服务端处理
++  跨域限制：浏览器有跨域限制，需要本地代理,浏览器阻止直接从 Obsidian 插件（本地文件）访问远程有道翻译API（CORS限制）
++ 有道API需要复杂的签名算法，需要服务端处理
 
 ### 6.1.4 为什么必须要有api_dict.exe
-
-- 本地数据访问：需要访问本地的SQLite词典数据库和tsv文件
-- 性能优化：本地查询比网络请求更快
-- 离线支持：不依赖网络，可以离线使用
-- 数据一致性：确保词典数据的完整性和准确性
++ 本地数据访问：需要访问本地的SQLite词典数据库和tsv文件
++ 性能优化：本地查询比网络请求更快
++ 离线支持：不依赖网络，可以离线使用
++ 数据一致性：确保词典数据的完整性和准确性
 
 ### 6.1.5 是否有其他替代方案
++ 当前方案是最优的
 
-- 当前方案是最优的
+
 
 ## 6.2 有道翻译模式我能理解，复合翻译模式是个什么模式，为什么叫做复合翻译，复合翻译模式是复合了什么东西
+
 
 ### 6.2.1 有道翻译模式下无论是词典释义的三个重要部分（基本释义，例句，网络释义），还是文本机器翻译和图片翻译，所调用的都是有道翻译的api，有种统一之美，所以叫做有道翻译
 
 ### 6.2.2 复合翻译模式下的数据来源多样
-
 #### 6.2.2.1 英译中：
++ 词典释义的基本释义来源于en-zh.sqlite3,例句来源于句子en-zh.tsv ,网络释义来源于en-zh.sqlite3
++ 文本机器翻译调用的是微软api
++ 图片翻译分为两步：
+1. 用微软API做OCR识别图片中的文字
+2. 再用微软API做文本翻译
+#### 6.2.2.1 中译英：
++ 词典释义的基本释义来源于zh-en.sqlite3,例句来源于句子en-zh.tsv ,网络释义来源于zh-en.sqlite3
++ 文本机器翻译调用的是微软api
++ 图片翻译分为两步：
+1. 用微软API做OCR识别图片中的文字
+2. 再用微软API做文本翻译
 
-- 词典释义的基本释义来源于en-zh.sqlite3,例句来源于句子en-zh.tsv
-  ,网络释义来源于en-zh.sqlite3
-- 文本机器翻译调用的是微软api
-- 图片翻译分为两步：
-
-1.  用微软API做OCR识别图片中的文字
-2.  再用微软API做文本翻译 \#### 6.2.2.1 中译英：
-
-- 词典释义的基本释义来源于zh-en.sqlite3,例句来源于句子en-zh.tsv
-  ,网络释义来源于zh-en.sqlite3
-- 文本机器翻译调用的是微软api
-- 图片翻译分为两步：
-
-1.  用微软API做OCR识别图片中的文字
-2.  再用微软API做文本翻译
 
 ## 6.3 en-zh.sqlite3数据库 和zh-en.sqlite3数据库都包含了哪些表格，这些表格分别有什么用
++ 打开sqlite3数据库可用DB Browser（SQLite）
+### 6.3.1 en-zh.sqlite3数据库：
++ en-zh.sqlite3数据库包含以下6个表格，如图所示
++ ![en-zh 的6个表格|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/en-zh%20的6个表格.png)
++ 插件用到的表格为translation表格和wordW表格
++ translation表格如下图所示
++ ![en-zh 的translation表格|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/en-zh%20的translation表格.png)
++ wordW表格如下图所示
++ ![en-zh的wordW表格|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/en-zh的wordW表格.png)
 
-- 打开sqlite3数据库可用DB Browser（SQLite） \### 6.3.1
-  en-zh.sqlite3数据库：
-
-- en-zh.sqlite3数据库包含以下6个表格，如图所示
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/en-zh%20的6个表格.png"
-  alt="en-zh 的6个表格|500" />
-  <figcaption aria-hidden="true">en-zh 的6个表格|500</figcaption>
-  </figure>
-
-- 插件用到的表格为translation表格和wordW表格
-
-- translation表格如下图所示
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/en-zh%20的translation表格.png"
-  alt="en-zh 的translation表格|500" />
-  <figcaption aria-hidden="true">en-zh 的translation表格|500</figcaption>
-  </figure>
-
-- wordW表格如下图所示
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/en-zh的wordW表格.png"
-  alt="en-zh的wordW表格|500" />
-  <figcaption aria-hidden="true">en-zh的wordW表格|500</figcaption>
-  </figure>
 
 ### 6.3.2 zh-en.sqlite3数据库
-
-- zh-en.sqlite3 数据库包含以下4个表格
-  ![zh-en的4个表格\|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/zh-en的4个表格.png)
-
-- 插件用到的表格为translation表格
-
-- translation表格如下图所示
-
-- <figure>
-  <img
-  src="https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/zh-en的translation.png"
-  alt="zh-en的translation|500" />
-  <figcaption aria-hidden="true">zh-en的translation|500</figcaption>
-  </figure>
++ zh-en.sqlite3 数据库包含以下4个表格
+![zh-en的4个表格|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/zh-en的4个表格.png)
++ 插件用到的表格为translation表格
++  translation表格如下图所示
++ ![zh-en的translation|500](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/zh-en的translation.png)
 
 ### 6.3.3 en-zh.sqlite3数据库表格的作用
-
-- translation表格为复合翻译模式英译中的词典释义提供基本释义和网络释义部分
-- wordW表格为英译中的词典释义的高级按钮部分提供数据
++ translation表格为复合翻译模式英译中的词典释义提供基本释义和网络释义部分
++ wordW表格为英译中的词典释义的高级按钮部分提供数据
 
 ### 6.3.4 zh-en.sqlite3数据库表格的作用
++  translation表格为复合翻译模式中译英的词典释义提供基本释义和网络释义部分
 
-- translation表格为复合翻译模式中译英的词典释义提供基本释义和网络释义部分
+
 
 ## 6.4 en-zh.sqlite3数据库 和zh-en.sqlite3数据库的表格数据都来源于什么
+### 6.4.1 zh-en.sqlite3数据库的simple_translation ，translation的一部分，translation_grouped 表格数据来源于https://download.wikdict.com/dictionaries/sqlite/2_2024-10/ ，translation表格数据的另一部分来源于 CC-CEDICT 词典数据
 
-### 6.4.1 zh-en.sqlite3数据库的simple_translation ，translation的一部分，translation_grouped 表格数据来源于https://download.wikdict.com/dictionaries/sqlite/2_2024-10/ ，translation表格数据的另一部分来源于 CC-CEDICT 词典数据
+### 6.4.2 en-zh.sqlite3数据库的simple_translation ,translation的一部分，translation_grouped 表格数据来源于https://download.wikdict.com/dictionaries/sqlite/2_2024-10/ ，translation表格数据的另一部分来源于 CC-CEDICT 词典数据，    wordW表格数据来源于WordNet和en-zh.sqlite3表格的translation表格数据，                                                                                          word_chain 表格数据来源于WordNet
 
-### 6.4.2 en-zh.sqlite3数据库的simple_translation ,translation的一部分，translation_grouped 表格数据来源于https://download.wikdict.com/dictionaries/sqlite/2_2024-10/ ，translation表格数据的另一部分来源于 CC-CEDICT 词典数据， wordW表格数据来源于WordNet和en-zh.sqlite3表格的translation表格数据， word_chain 表格数据来源于WordNet
+
+
 
 ## 6.5 dict_service 的句子en-zh.tsv 表格数据来源于什么
 
-- 来源于 Tatoeba 项目
++ 来源于 Tatoeba 项目
+
+
 
 # 7 整体架构图
++ 帮助你快速入门和理解整个插件的运行逻辑
++    ![整体架构图|600](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/整体架构图.png)
++ 如果看不清楚可以在Obsidian Translation文件夹的picture文件夹用专业的图片查看器查看"整体架构图.png"
 
-- 帮助你快速入门和理解整个插件的运行逻辑
--  
-   ![整体架构图\|600](https://raw.githubusercontent.com/moujiawei/Obsidian-Translation/main/picture/整体架构图.png)
-- 如果看不清楚可以在Obsidian
-  Translation文件夹的picture文件夹用专业的图片查看器查看”整体架构图.png”
 
 # 8 历史版本
-
 ## v1.0.0 首次发布
++ 具体功能可以看[[#2功能特性(具体操作看 4如何使用该插件)]]
++ 插件下载地址（GitHub）：(https://github.com/moujiawei/Obsidian-Translation/tree/main?tab=readme-ov-file)和
++ [Release Obsidian Translation Plugin v1.0.0 - Initial Release · moujiawei/Obsidian-Translation](https://github.com/moujiawei/Obsidian-Translation/releases/tag/v1.0.0)
 
-- 具体功能可以看\[\[#2功能特性(具体操作看 4如何使用该插件)\]\]
-- 插件下载地址（GitHub）：(https://github.com/moujiawei/Obsidian-Translation/tree/main?tab=readme-ov-file)和
-- [Release Obsidian Translation Plugin v1.0.0 - Initial Release ·
-  moujiawei/Obsidian-Translation](https://github.com/moujiawei/Obsidian-Translation/releases/tag/v1.0.0)
+
+
 
 # 9 联系方式
-
-- 2508444135@qq.com
-- 为了更好地帮助您解决问题，请提供：
-
-1.  问题详细描述
-2.  操作步骤
-3.  系统环境（Windows版本、Obsidian版本）
-4.  错误截图（如有）
-5.  期望的解决方案 \## 数据贡献 如果您有词典数据贡献，欢迎提供：
-
++ 2508444135@qq.com
++ 为了更好地帮助您解决问题，请提供：
+1. 问题详细描述
+2. 操作步骤
+3. 系统环境（Windows版本、Obsidian版本）
+4. 错误截图（如有）
+5. 期望的解决方案
+## 数据贡献
+如果您有词典数据贡献，欢迎提供：
 - 完善的en-zh.sqlite3和zh-en.sqlite3数据库
 - 缺失的单词短语列表
-- 新的例句数据 -我会定期更新数据库，并在新版本中标注贡献者。
-- \[\[#6.4 en-zh.sqlite3数据库
-  和zh-en.sqlite3数据库的表格数据都来源于什么\]\]
+- 新的例句数据
+-我会定期更新数据库，并在新版本中标注贡献者。
++ [[#6.4 en-zh.sqlite3数据库 和zh-en.sqlite3数据库的表格数据都来源于什么]]
+
 
 # 10 赞助支持
 
-如果这个插件对您有帮助，欢迎赞助支持！ \## 赞助方式
+如果这个插件对您有帮助，欢迎赞助支持！
+## 赞助方式
 
-- https://afdian.tv/a/20050324dm \## 赞助用途
+- https://afdian.tv/a/20050324dm
+## 赞助用途
 
 - 词典数据更新
-
 - 功能开发优化
-
-- 技术支持服务 \## 赞助者名单 感谢以下赞助者的支持：
-
-- ## \[待添加\]
+- 技术支持服务
+## 赞助者名单
+感谢以下赞助者的支持：
+- [待添加]
+---
 
 *您的支持是我持续改进的动力！*
 
-# 11 快速入门
 
-- 完成 \[\[#3 准备工作（重中之重）\]\]
-- 浏览\[\[#7 整体架构图\]\]，帮助快速入门
+
+# 11 快速入门
++ 完成 [[#3 准备工作（重中之重）]]
++ 浏览[[#7 整体架构图]]，帮助快速入门
 
 # 12 许可证信息
++ 本插件使用MIT License
 
-- 本插件使用MIT License
 
 # 13 致谢
+感谢以下开源项目：
+- [有道翻译API](https://ai.youdao.com/)
+- [Microsoft Azure](https://azure.microsoft.com/)
+- [CC-CEDICT](https://cc-cedict.org/wiki/)
+- [WordNet](https://wordnet.princeton.edu/)
+- [Tatoeba](https://tatoeba.org/)
+- [Wikdict](https://download.wikdict.com)
 
-感谢以下开源项目： - [有道翻译API](https://ai.youdao.com/) - [Microsoft
-Azure](https://azure.microsoft.com/) -
-[CC-CEDICT](https://cc-cedict.org/wiki/) -
-[WordNet](https://wordnet.princeton.edu/) -
-[Tatoeba](https://tatoeba.org/) -
-[Wikdict](https://download.wikdict.com)
+
+
+
+
+
 
 
 
